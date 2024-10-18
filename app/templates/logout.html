@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Đăng xuất{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Đăng xuất</h2>
+    <p>Bạn có chắc chắn muốn đăng xuất không?</p>
+    <form action="{{ url_for('main.logout') }}" method="POST">
+        <div class="form-group">
+            <button type="submit">Đăng xuất</button>
+        </div>
+    </form>
+    <div class="form-link">
+        <p>Hoặc <a href="{{ url_for('main.home') }}">quay lại trang chủ</a></p>
+    </div>
+</div>
+{% endblock %}

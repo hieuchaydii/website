@@ -1,0 +1,629 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem; /* Tăng độ dày cho thanh điều hướng */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    padding-right: 1.5rem;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+
+/* Facebook Icon */
+.navbar-nav .nav-link i {
+    font-size: 1.2rem; /* Kích thước biểu tượng Facebook */
+    color: #fff; /* Màu sắc biểu tượng Facebook */
+}
+
+.navbar-nav .nav-link:hover i {
+    color: #ffc107; /* Màu khi di chuột qua biểu tượng Facebook */
+}
+
+/* Buttons */
+.btn-custom {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #e0a800;
+}
+
+/* Main Content */
+main {
+    min-height: 70vh;
+    padding-top: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: transparent; /* Remove the background color */
+    padding: 1rem 0; /* Keep padding if needed */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode .modal-content {
+    background-color: #333;
+}
+
+.modal-open {
+    display: flex;
+}
+
+.modal-header,
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+
+
+.modal-footer button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Dark Mode Tooltip */
+body.dark-mode .tooltip .tooltiptext {
+    background-color: #555;
+}
+
+/* Alert Box */
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.alert.success {
+    background-color: #4CAF50;
+}
+
+.alert.info {
+    background-color: #2196F3;
+}
+
+.alert.warning {
+    background-color: #ff9800;
+}
+
+/* Close Button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/* Toast Notification */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+body.dark-mode .toast {
+    background-color: #555;
+}
+
+.toast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+/* Avatar Styles */
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease;
+}
+
+.avatar:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Accordion Styles */
+.accordion {
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: background-color 0.4s ease;
+}
+
+body.dark-mode .accordion {
+    background-color: #333;
+    color: #f1f1f1;
+}
+
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+body.dark-mode .accordion.active,
+body.dark-mode .accordion:hover {
+    background-color: #444;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+body.dark-mode .accordion:after {
+    color: #ccc;
+}
+
+.accordion.active:after {
+    content: "\2212";
+}
+
+/* Panel for accordion */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+body.dark-mode .panel {
+    background-color: #222;
+}
+
+/* Card Styles */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px 0;
+    padding: 20px;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .card {
+    border-color: #444;
+    background-color: #222;
+}
+
+/* Floating Action Button (FAB) */
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+body.dark-mode .fab {
+    background-color: #0056b3;
+}
+
+.fab:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Badge Styles */
+.badge {
+    display: inline-block;
+    padding: 0.4em 0.8em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+}
+
+.badge-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.badge-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.badge-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.badge-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.badge-info {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    justify-content: center;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a {
+    color: #007bff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pagination a:hover {
+    background-color: #e9ecef;
+}
+
+.pagination .active a {
+    background-color: #007bff;
+    color: white;
+}
+
+body.dark-mode .pagination a:hover {
+    background-color: #444;
+}
+
+body.dark-mode .pagination .active a {
+    background-color: #0056b3;
+}
+
+/* Divider Styles */
+.divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+body.dark-mode .divider {
+    background-color: #444;
+}
+
+/* User Page Styles */
+.user-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.user-page h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.user-options {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-options li {
+    margin-bottom: 15px;
+}
+
+.user-options li a {
+    display: block;
+    padding: 15px;
+    background-color: #f8f9fa;
+    color: #212529;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-options li a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+body.dark-mode .user-options li a {
+    background-color: #333;
+    color: #f8f9fa;
+}
+
+body.dark-mode .user-options li a:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* General Form Styles */
+/* Form Container */
+form {
+    max-width: 600px; /* Đặt chiều rộng tối đa cho form */
+    margin: 0 auto; /* Căn giữa form */
+    padding: 20px; /* Thêm khoảng cách bên trong */
+    background-color: #fff; /* Màu nền trắng */
+    border-radius: 8px; /* Bo góc cho form */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng cho form */
+}
+
+/* Labels */
+form label {
+    font-size: 16px; /* Kích thước chữ cho nhãn */
+    font-weight: 600; /* Đậm chữ */
+    margin-bottom: 5px; /* Khoảng cách dưới nhãn */
+    display: block; /* Hiển thị dưới dạng khối */
+}
+
+/* Input and Textarea */
+form input[type="text"],
+form textarea {
+    width: 100%; /* Chiều rộng 100% */
+    padding: 10px; /* Khoảng cách bên trong */
+    border-radius: 4px; /* Bo góc */
+    border: 1px solid #ccc; /* Viền xám */
+    margin-bottom: 15px; /* Khoảng cách dưới input */
+    font-size: 14px; /* Kích thước chữ */
+    transition: border-color 0.3s ease; /* Hiệu ứng chuyển tiếp cho viền */
+}
+
+/* Input Focus Effect */
+form input[type="text"]:focus,
+form textarea:focus {
+    border-color: #007bff; /* Màu viền khi focus */
+}
+
+/* Submit Button */
+form button {
+    padding: 10px 15px; /* Khoảng cách bên trong */
+    font-size: 16px; /* Kích thước chữ */
+    border-radius: 4px; /* Bo góc */
+    border: none; /* Không viền */
+    background-color: #007bff; /* Màu nền nút */
+    color: white; /* Màu chữ nút */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển tiếp cho nút */
+}
+
+/* Button Hover Effect */
+form button:hover {
+    background-color: #0056b3; /* Màu nền khi di chuột qua nút */
+}
+
+body.dark-mode .form-link a {
+    color: #ffc107;
+}
+
+body.dark-mode .form-link a:hover {
+    color: #fff;
+}
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* Màu nền cho form */
+    border-radius: 8px; /* Bo góc cho form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng cho form */
+}
+
+.form-container h1, .form-container h2 {
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+label {
+    display: block; /* Hiển thị label thành block */
+    margin-bottom: 8px; /* Khoảng cách dưới label */
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; /* Khoảng cách dưới input */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Bo góc cho input */
+    transition: border-color 0.3s; /* Thêm hiệu ứng chuyển tiếp */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff; /* Đổi màu viền khi focus */
+    outline: none; /* Xóa outline khi focus */
+}
+
+.form-link {
+    text-align: center; /* Căn giữa cho liên kết */
+    margin-top: 15px; /* Khoảng cách trên liên kết */
+}
+
+ul {
+    list-style-type: none; /* Xóa kiểu danh sách */
+    padding: 0; /* Xóa padding */
+    margin: 10px 0; /* Khoảng cách trên dưới */
+}
+
+ul li {
+    margin: 5px 0; /* Khoảng cách giữa các thông báo */
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+#memory-game {
+    display: flex;
+    flex-wrap: wrap;
+    width: 450px;
+    margin: 20px auto;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.card.flip {
+    background-color: lightblue;
+    transform: rotateY(180deg);
+}
